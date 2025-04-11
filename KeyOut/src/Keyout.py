@@ -19,6 +19,31 @@ ziotcObject = pyziotc.Ziotc()
 logger = Logger(DEBUG_SERVER, DEBUG_PORT, LOG_ONLY_TO_CONSOLE)
 restAPI = RestAPI(logger, REST_API_RETRY_COUNT,ziotcObject)
 
+# AZERTY key mapping
+key_mapping_azerty = {
+    'a': 'q',
+    'z': 'w',
+    'q': 'a',
+    'm': ';',
+    'w': 'z',
+    '1': '!',
+    '2': '@',
+    '3': '#',
+    '4': '$',
+    '5': '%',
+    '6': '^',
+    '7': '&',
+    '8': '*',
+    '9': '(',
+    '0': ')',
+    # Add other mappings as needed
+}
+
+def get_mapped_key(key, layout='azerty'):
+    return key_mapping_azerty.get(key, key)
+
+# 
+
 # ************************************************************************
 # Stop Signal Handler
 # ************************************************************************
